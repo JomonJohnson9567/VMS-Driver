@@ -5,56 +5,86 @@ import '../../core/colors/colors.dart';
 class PhoneNumberField extends StatelessWidget {
   final TextEditingController? controller;
   final String hintText;
+  final String? errorText;
+  final Function(String)? onChanged;
 
-  const PhoneNumberField({super.key, this.controller, required this.hintText});
+  const PhoneNumberField({
+    super.key,
+    this.controller,
+    required this.hintText,
+    this.errorText,
+    this.onChanged,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: AppColors.white,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: AppColors.grey),
-      ),
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Row(
-        children: [
-          Row(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            color: AppColors.white,
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(color: AppColors.grey),
+          ),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Row(
             children: [
-              Image.asset(OnboardAssets.flag, width: 24, height: 24),
-              const SizedBox(width: 8),
-              const Icon(Icons.keyboard_arrow_down, color: AppColors.black),
-              const SizedBox(width: 8),
-              Container(width: 1, height: 24, color: AppColors.grey),
+              Flexible(
+                flex: 0,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Icon(Icons.flag, color: AppColors.black),
+                    // Image.asset(OnboardAssets.flag, width: 24, height: 24),
+                    const SizedBox(width: 8),
+                    const Icon(
+                      Icons.keyboard_arrow_down,
+                      color: AppColors.black,
+                    ),
+                    const SizedBox(width: 8),
+                    Container(width: 1, height: 24, color: AppColors.grey),
+                    const SizedBox(width: 12),
+                    const Text(
+                      '+91',
+                      style: TextStyle(
+                        color: AppColors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               const SizedBox(width: 12),
-              const Text(
-                '+91',
-                style: TextStyle(
-                  color: AppColors.black,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
+              Expanded(
+                child: TextFormField(
+                  controller: controller,
+                  keyboardType: TextInputType.phone,
+                  onChanged: onChanged,
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: hintText,
+                    hintStyle: const TextStyle(
+                      color: AppColors.darkGrey,
+                      fontSize: 16,
+                    ),
+                    contentPadding: const EdgeInsets.symmetric(vertical: 14),
+                  ),
                 ),
               ),
             ],
           ),
-          const SizedBox(width: 12),
-          Expanded(
-            child: TextField(
-              controller: controller,
-              keyboardType: TextInputType.phone,
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                hintText: hintText,
-                hintStyle: const TextStyle(
-                  color: AppColors.darkGrey,
-                  fontSize: 16,
-                ),
-                contentPadding: const EdgeInsets.symmetric(vertical: 14),
-              ),
+        ),
+        if (errorText != null)
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0, left: 16.0),
+            child: Text(
+              errorText!,
+              style: const TextStyle(color: Colors.red, fontSize: 12),
             ),
           ),
-        ],
-      ),
+      ],
     );
   }
 }

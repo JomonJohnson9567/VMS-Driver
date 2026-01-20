@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vms_driver/core/colors/colors.dart';
+import 'package:vms_driver/presentation/pages/sign_in/bloc/sign_in_cubit.dart';
+import 'package:vms_driver/core/routes/app_routes.dart';
 import 'widgets/sign_in_header.dart';
 import 'widgets/sign_in_illustration.dart';
 import 'widgets/sign_in_title.dart';
@@ -15,45 +18,52 @@ class SignInPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.white,
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 24.0,
-              vertical: 16.0,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SignInHeader(),
-                const SizedBox(height: 24),
+    return BlocProvider(
+      create: (context) => SignInCubit(),
+      child: Scaffold(
+        backgroundColor: AppColors.white,
+        body: SafeArea(
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 24.0,
+                vertical: 16.0,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SignInHeader(),
+                  const SizedBox(height: 24),
 
-                const SignInIllustration(),
-                const SizedBox(height: 32),
+                  const SignInIllustration(),
+                  const SizedBox(height: 32),
 
-                const SignInTitle(),
-                const SizedBox(height: 32),
+                  const SignInTitle(),
+                  const SizedBox(height: 32),
 
-                const SignInNameSection(),
-                const SizedBox(height: 20),
+                  const SignInNameSection(),
+                  const SizedBox(height: 20),
 
-                const SignInPhoneSection(),
-                const SizedBox(height: 12),
+                  const SignInPhoneSection(),
+                  const SizedBox(height: 12),
 
-                const SignInOtpInfo(),
-                const SizedBox(height: 32),
+                  const SignInOtpInfo(),
+                  const SizedBox(height: 32),
 
-                SignInButton(onPressed: () {}),
-                const SizedBox(height: 24),
+                  const SignInButton(),
+                  const SizedBox(height: 24),
 
-                SignInLoginLink(onTap: () {}),
-                const SizedBox(height: 32),
+                  SignInLoginLink(
+                    onTap: () {
+                      Navigator.pushNamed(context, AppRoutes.logIn);
+                    },
+                  ),
+                  const SizedBox(height: 32),
 
-                const SignInFooter(),
-                const SizedBox(height: 16),
-              ],
+                  const SignInFooter(),
+                  const SizedBox(height: 16),
+                ],
+              ),
             ),
           ),
         ),

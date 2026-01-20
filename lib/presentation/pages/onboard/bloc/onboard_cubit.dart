@@ -1,8 +1,9 @@
 import 'package:bloc/bloc.dart';
- import 'package:flutter/material.dart';
-import 'package:vms_driver/presentation/bloc/onboard_cubit.dart';
+import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 
- 
+part 'onboard_state.dart';
+
 class OnboardCubit extends Cubit<OnboardState> {
   OnboardCubit() : super(const OnboardState());
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vms_driver/core/colors/colors.dart';
-import 'package:vms_driver/presentation/pages/welcome/welcome.dart';
+import 'package:vms_driver/core/routes/app_routes.dart';
 
 class OnboardSkipButton extends StatelessWidget {
   const OnboardSkipButton({super.key, this.onTap});
@@ -13,10 +13,7 @@ class OnboardSkipButton extends StatelessWidget {
       onPressed:
           onTap ??
           () {
-            Navigator.push(
-              (context),
-              MaterialPageRoute(builder: (context) => const WelcomeScreen()),
-            );
+            Navigator.pushNamed(context, AppRoutes.welcome);
           },
       style: TextButton.styleFrom(foregroundColor: AppColors.black),
       child: const Text('Skip'),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vms_driver/presentation/pages/sign_in/sign_in_page.dart';
+import 'package:vms_driver/core/routes/app_routes.dart';
 import 'package:vms_driver/presentation/pages/welcome/widgets/outline_button.dart';
 import 'package:vms_driver/presentation/pages/welcome/widgets/primary_button.dart';
 import 'package:vms_driver/presentation/widgets/onboard_assets.dart';
@@ -42,16 +42,18 @@ class WelcomeScreen extends StatelessWidget {
               PrimaryButton(
                 text: 'Create an account',
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const SignInPage()),
-                  );
+                  Navigator.pushNamed(context, AppRoutes.signIn);
                 },
               ),
 
               const SizedBox(height: 14),
 
-              OutlineButton(text: 'Log in', onTap: () {}),
+              OutlineButton(
+                text: 'Log in',
+                onTap: () {
+                  Navigator.pushNamed(context, AppRoutes.logIn);
+                },
+              ),
 
               const SizedBox(height: 30),
             ],

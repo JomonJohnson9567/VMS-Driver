@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vms_driver/presentation/bloc/onboard_cubit.dart';
+import 'package:vms_driver/presentation/pages/onboard/bloc/onboard_cubit.dart';
 
 import 'package:vms_driver/presentation/pages/onboard/widgets/onboard_content.dart';
 import 'package:vms_driver/presentation/pages/onboard/widgets/onboard_next_button.dart';
 import 'package:vms_driver/presentation/pages/onboard/widgets/onboard_skip_button.dart';
 import 'package:vms_driver/presentation/pages/onboard/widgets/onboard_data.dart';
-import 'package:vms_driver/presentation/pages/welcome/welcome.dart';
+import 'package:vms_driver/core/routes/app_routes.dart';
 import '../../../../core/colors/colors.dart';
 
 class OnBoardScreen extends StatelessWidget {
@@ -75,11 +75,9 @@ class _OnBoardContent extends StatelessWidget {
                       text: state.pageIndex == 2 ? "Go" : null,
                       onPressed: () {
                         if (state.pageIndex == 2) {
-                          Navigator.pushReplacement(
+                          Navigator.pushReplacementNamed(
                             context,
-                            MaterialPageRoute(
-                              builder: (context) => const WelcomeScreen(),
-                            ),
+                            AppRoutes.welcome,
                           );
                         } else {
                           context.read<OnboardCubit>().nextPage();

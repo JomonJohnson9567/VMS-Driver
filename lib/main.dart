@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:vms_driver/presentation/pages/onboard/on_board.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vms_driver/core/routes/app_router.dart';
+import 'package:vms_driver/core/routes/app_routes.dart';
+import 'package:vms_driver/core/theme/app_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +21,9 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'VMS Driver',
-          home: const OnBoardScreen(),
+          theme: AppTheme.lightTheme,
+          initialRoute: AppRoutes.splash,
+          onGenerateRoute: AppRouter.onGenerateRoute,
         );
       },
     );
