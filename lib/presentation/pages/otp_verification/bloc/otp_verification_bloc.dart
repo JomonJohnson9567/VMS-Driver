@@ -94,7 +94,7 @@ class OtpVerificationBloc
 
       // If we got here validation passed so validationError is null,
       // but we still check mock logic
-      if (state.otpString.isNotEmpty) {
+      if (state.otpString.isNotEmpty && state.otpString == "12345") {
         emit(state.copyWith(status: OtpStatus.success));
       } else {
         // This block might be unreachable if Validator checks for empty, but keeping safe fallback

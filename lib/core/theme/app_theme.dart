@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'app_colors.dart';
-
+import 'package:vms_driver/core/theme/colors/colors.dart';
+ 
 class AppTheme {
   static final ThemeData lightTheme = ThemeData(
     primaryColor: AppColors.primaryOrange,
