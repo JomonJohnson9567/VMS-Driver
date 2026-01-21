@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vms_driver/presentation/widgets/onboard_assets.dart';
 import '../../core/colors/colors.dart';
 
@@ -13,7 +14,7 @@ class PhoneNumberField extends StatelessWidget {
     this.controller,
     required this.hintText,
     this.errorText,
-    this.onChanged,
+    this.onChanged, 
   });
 
   @override
@@ -24,10 +25,12 @@ class PhoneNumberField extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
             color: AppColors.white,
-            borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: AppColors.grey),
+            borderRadius: BorderRadius.circular(12.r),
+            border: Border.all(
+              color: errorText != null ? AppColors.red : AppColors.grey,
+            ),
           ),
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: Row(
             children: [
               Flexible(
@@ -35,41 +38,42 @@ class PhoneNumberField extends StatelessWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Icon(Icons.flag, color: AppColors.black),
-                    // Image.asset(OnboardAssets.flag, width: 24, height: 24),
-                    const SizedBox(width: 8),
+                    // const Icon(Icons.flag, color: AppColors.black),
+                    Image.asset(OnboardAssets.flag, width: 24, height: 24),
+                    SizedBox(width: 8.w),
                     const Icon(
                       Icons.keyboard_arrow_down,
                       color: AppColors.black,
                     ),
-                    const SizedBox(width: 8),
-                    Container(width: 1, height: 24, color: AppColors.grey),
-                    const SizedBox(width: 12),
-                    const Text(
+                    SizedBox(width: 8.w),
+                    Container(width: 1.w, height: 24.h, color: AppColors.grey),
+                    SizedBox(width: 12.w),
+                    Text(
                       '+91',
                       style: TextStyle(
                         color: AppColors.black,
-                        fontSize: 16,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
                   ],
                 ),
               ),
-              const SizedBox(width: 12),
+              SizedBox(width: 12.w),
               Expanded(
                 child: TextFormField(
                   controller: controller,
                   keyboardType: TextInputType.phone,
                   onChanged: onChanged,
                   decoration: InputDecoration(
+                    focusColor: AppColors.red,
                     border: InputBorder.none,
                     hintText: hintText,
-                    hintStyle: const TextStyle(
+                    hintStyle: TextStyle(
                       color: AppColors.darkGrey,
-                      fontSize: 16,
+                      fontSize: 16.sp,
                     ),
-                    contentPadding: const EdgeInsets.symmetric(vertical: 14),
+                    contentPadding: EdgeInsets.symmetric(vertical: 14.h),
                   ),
                 ),
               ),
@@ -78,10 +82,10 @@ class PhoneNumberField extends StatelessWidget {
         ),
         if (errorText != null)
           Padding(
-            padding: const EdgeInsets.only(top: 8.0, left: 16.0),
+            padding: EdgeInsets.only(top: 8.h, left: 16.w),
             child: Text(
               errorText!,
-              style: const TextStyle(color: Colors.red, fontSize: 12),
+              style: TextStyle(color: Colors.red, fontSize: 12.sp),
             ),
           ),
       ],

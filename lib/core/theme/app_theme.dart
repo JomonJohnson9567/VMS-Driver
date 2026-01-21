@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../colors/colors.dart';
 
 class AppTheme {
@@ -10,7 +9,7 @@ class AppTheme {
       primary: AppColors.primaryOrange,
       secondary: AppColors.blue,
     ),
-    textTheme: GoogleFonts.poppinsTextTheme(),
+    fontFamily: 'Poppins',
     useMaterial3: true,
   );
 }

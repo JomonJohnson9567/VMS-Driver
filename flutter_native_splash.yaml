@@ -1,0 +1,11 @@
+flutter_native_splash:
+  color: "#F06924"
+  # image: assets/images/logo.png
+  # android_12:
+  #   image: assets/images/logo.png
+  #   icon_background_color: "#F06924"
+
+  # To add a logo:
+  # 1. Add your logo image to assets/images/ (e.g., logo.png)
+  # 2. Uncomment the 'image' lines above
+  # 3. Run: dart run flutter_native_splash:create --path=flutter_native_splash.yaml

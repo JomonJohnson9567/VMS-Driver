@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../core/colors/colors.dart';
 
 class CustomTextField extends StatelessWidget {
@@ -25,10 +26,12 @@ class CustomTextField extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
             color: AppColors.white,
-            borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: AppColors.grey),
+            borderRadius: BorderRadius.circular(12.r),
+            border: Border.all(
+              color: errorText != null ? AppColors.red : AppColors.grey,
+            ),
           ),
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: TextFormField(
             controller: controller,
             keyboardType: keyboardType,
@@ -36,11 +39,8 @@ class CustomTextField extends StatelessWidget {
             decoration: InputDecoration(
               border: InputBorder.none,
               hintText: hintText,
-              hintStyle: const TextStyle(
-                color: AppColors.darkGrey,
-                fontSize: 16,
-              ),
-              contentPadding: const EdgeInsets.symmetric(vertical: 14),
+              hintStyle: TextStyle(color: AppColors.darkGrey, fontSize: 16.sp),
+              contentPadding: EdgeInsets.symmetric(vertical: 14.h),
               // We handle error text outside the decoration to keep custom styling
               // or we can integrate it. For now, let's keep the error separate
               // or integrated if standard look is desired.
@@ -56,10 +56,10 @@ class CustomTextField extends StatelessWidget {
         ),
         if (errorText != null)
           Padding(
-            padding: const EdgeInsets.only(top: 8.0, left: 16.0),
+            padding: EdgeInsets.only(top: 8.h, left: 16.w),
             child: Text(
               errorText!,
-              style: const TextStyle(color: Colors.red, fontSize: 12),
+              style: TextStyle(color: Colors.red, fontSize: 12.sp),
             ),
           ),
       ],

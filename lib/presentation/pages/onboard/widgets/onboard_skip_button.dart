@@ -13,7 +13,7 @@ class OnboardSkipButton extends StatelessWidget {
       onPressed:
           onTap ??
           () {
-            Navigator.pushNamed(context, AppRoutes.welcome);
+            Navigator.pushReplacementNamed(context, AppRoutes.welcome);
           },
       style: TextButton.styleFrom(foregroundColor: AppColors.black),
       child: const Text('Skip'),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vms_driver/presentation/pages/onboard/bloc/onboard_cubit.dart';
 
@@ -34,9 +36,18 @@ class _OnBoardContent extends StatelessWidget {
             Align(
               alignment: Alignment.topRight,
               child: Padding(
-                padding: const EdgeInsets.only(top: 8, right: 8),
+                padding: EdgeInsets.only(top: 8.h, right: 8.w),
                 child: OnboardSkipButton(
-                  onTap: () => context.read<OnboardCubit>().skip(),
+                  onTap: () async {
+                    final prefs = await SharedPreferences.getInstance();
+                    await prefs.setBool('isOnboardCompleted', true);
+                    if (context.mounted) {
+                      Navigator.pushReplacementNamed(
+                        context,
+                        AppRoutes.welcome,
+                      );
+                    }
+                  },
                 ),
               ),
             ),
@@ -61,7 +72,7 @@ class _OnBoardContent extends StatelessWidget {
             Align(
               alignment: Alignment.bottomCenter,
               child: Padding(
-                padding: const EdgeInsets.only(bottom: 44),
+                padding: EdgeInsets.only(bottom: 44.h),
                 child: BlocBuilder<OnboardCubit, OnboardState>(
                   builder: (context, state) {
                     double progress = 0.33;
@@ -73,12 +84,16 @@ class _OnBoardContent extends StatelessWidget {
                       progress: progress,
                       icon: state.pageIndex == 2 ? null : Icons.arrow_forward,
                       text: state.pageIndex == 2 ? "Go" : null,
-                      onPressed: () {
+                      onPressed: () async {
                         if (state.pageIndex == 2) {
-                          Navigator.pushReplacementNamed(
-                            context,
-                            AppRoutes.welcome,
-                          );
+                          final prefs = await SharedPreferences.getInstance();
+                          await prefs.setBool('isOnboardCompleted', true);
+                          if (context.mounted) {
+                            Navigator.pushReplacementNamed(
+                              context,
+                              AppRoutes.welcome,
+                            );
+                          }
                         } else {
                           context.read<OnboardCubit>().nextPage();
                         }

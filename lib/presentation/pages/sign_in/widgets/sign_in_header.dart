@@ -11,7 +11,7 @@ class SignInHeader extends StatelessWidget {
       onPressed: () {
         Navigator.pop(context);
       },
-      padding: EdgeInsets.zero,
+
       constraints: const BoxConstraints(),
     );
   }

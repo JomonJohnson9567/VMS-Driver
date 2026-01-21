@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vms_driver/core/colors/colors.dart';
-import 'package:vms_driver/core/routes/app_routes.dart';
+
 import 'bloc/splash_cubit.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -13,8 +13,10 @@ class SplashScreen extends StatelessWidget {
       create: (context) => SplashCubit(),
       child: BlocListener<SplashCubit, SplashState>(
         listener: (context, state) {
-          // Navigate to onboard screen after 3 seconds
-          Navigator.pushReplacementNamed(context, AppRoutes.onboard);
+          // Navigate based on targetRoute from state
+          if (state.targetRoute != null) {
+            Navigator.pushReplacementNamed(context, state.targetRoute!);
+          }
         },
         child: Scaffold(
           body: Container(

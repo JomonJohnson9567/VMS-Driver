@@ -4,14 +4,16 @@ import 'package:vms_driver/presentation/pages/sign_in/bloc/sign_in_cubit.dart';
 import '../../../widgets/primary_button.dart';
 
 class SignInButton extends StatelessWidget {
-  const SignInButton({super.key});
+  const SignInButton({super.key, required this.onPressed});
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
     return PrimaryButton(
-      text: "Sign In",
+      text: "Sign up",
       onPressed: () {
-        context.read<SignInCubit>().submit();
+        // context.read<SignInCubit>().submit();
+        onPressed();
       },
     );
   }

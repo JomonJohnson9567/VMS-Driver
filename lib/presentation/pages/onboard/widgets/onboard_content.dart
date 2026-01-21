@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vms_driver/core/colors/colors.dart';
 
 class OnboardContent extends StatelessWidget {
@@ -16,36 +17,36 @@ class OnboardContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24),
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const SizedBox(height: 16),
+          SizedBox(height: 16.h),
           SizedBox(
-            height: 300,
+            height: 300.h,
             child: Image.asset(imagePath, fit: BoxFit.contain),
           ),
-          const SizedBox(height: 28),
+          SizedBox(height: 28.h),
           Text(
             title,
             textAlign: TextAlign.center,
             style: TextStyle(
               color: AppColors.black,
-              fontSize: 26,
+              fontSize: 26.sp,
               fontWeight: FontWeight.w700,
             ),
           ),
-          const SizedBox(height: 12),
+          SizedBox(height: 12.h),
           Text(
             description,
             textAlign: TextAlign.center,
             style: TextStyle(
               color: AppColors.black.withValues(alpha: 0.45),
-              fontSize: 14,
+              fontSize: 14.sp,
               height: 1.5,
             ),
           ),
-          const SizedBox(height: 96),
+          SizedBox(height: 96.h),
         ],
       ),
     );
