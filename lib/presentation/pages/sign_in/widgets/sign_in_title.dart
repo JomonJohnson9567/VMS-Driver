@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vms_driver/core/colors/colors.dart';
+import 'package:vms_driver/core/theme/colors/colors.dart';
 
 class SignInTitle extends StatelessWidget {
   const SignInTitle({super.key});

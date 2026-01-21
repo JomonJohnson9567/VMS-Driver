@@ -1,7 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
-import 'package:vms_driver/core/colors/colors.dart';
+import 'package:vms_driver/core/theme/colors/colors.dart';
 
 class OnboardNextButton extends StatelessWidget {
   const OnboardNextButton({

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vms_driver/core/colors/colors.dart';
+import 'package:vms_driver/core/theme/colors/colors.dart';
 
 class LogInHeader extends StatelessWidget {
   const LogInHeader({super.key});

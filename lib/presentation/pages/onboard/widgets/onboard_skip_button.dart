@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vms_driver/core/colors/colors.dart';
+import 'package:vms_driver/core/theme/colors/colors.dart';
 import 'package:vms_driver/core/routes/app_routes.dart';
 
 class OnboardSkipButton extends StatelessWidget {

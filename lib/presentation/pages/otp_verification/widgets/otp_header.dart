@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/colors/colors.dart';
+import '../../../../core/theme/colors/colors.dart';
 
 class OtpHeader extends StatelessWidget {
   const OtpHeader({super.key});

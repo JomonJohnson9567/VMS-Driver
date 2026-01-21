@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vms_driver/presentation/widgets/onboard_assets.dart';
-import '../../core/colors/colors.dart';
+import '../../core/theme/colors/colors.dart';
 
 class PhoneNumberField extends StatelessWidget {
   final TextEditingController? controller;
@@ -14,7 +14,7 @@ class PhoneNumberField extends StatelessWidget {
     this.controller,
     required this.hintText,
     this.errorText,
-    this.onChanged, 
+    this.onChanged,
   });
 
   @override

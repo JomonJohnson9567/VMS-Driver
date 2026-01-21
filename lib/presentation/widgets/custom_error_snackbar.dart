@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../core/colors/colors.dart';
+import '../../core/theme/colors/colors.dart';
 
 class CustomErrorSnackBar extends StatefulWidget {
   final String title;

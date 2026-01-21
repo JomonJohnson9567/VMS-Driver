@@ -48,7 +48,7 @@ class SuccessIllustration extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // Password dots simulation
+              
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: List.generate(
@@ -82,8 +82,7 @@ class SuccessIllustration extends StatelessWidget {
             ),
           ),
 
-          // Decorative Elements
-          // Lock
+         
           Positioned(
             left: 30.w,
             top: 60.h,

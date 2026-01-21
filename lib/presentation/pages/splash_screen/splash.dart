@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vms_driver/core/colors/colors.dart';
+import 'package:vms_driver/core/theme/colors/colors.dart';
 
 import 'bloc/splash_cubit.dart';
 

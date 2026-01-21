@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../core/colors/colors.dart';
+import '../../core/theme/colors/colors.dart';
 
 class CustomTextField extends StatelessWidget {
   final TextEditingController? controller;
@@ -41,7 +41,6 @@ class CustomTextField extends StatelessWidget {
               hintText: hintText,
               hintStyle: TextStyle(color: AppColors.darkGrey, fontSize: 16.sp),
               contentPadding: EdgeInsets.symmetric(vertical: 14.h),
-              
             ),
           ),
         ),

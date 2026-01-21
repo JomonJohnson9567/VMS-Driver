@@ -9,7 +9,7 @@ import 'package:vms_driver/presentation/pages/onboard/widgets/onboard_next_butto
 import 'package:vms_driver/presentation/pages/onboard/widgets/onboard_skip_button.dart';
 import 'package:vms_driver/presentation/widgets/onboard_data.dart';
 import 'package:vms_driver/core/routes/app_routes.dart';
-import '../../../../core/colors/colors.dart';
+import '../../../core/theme/colors/colors.dart';
 
 class OnBoardScreen extends StatelessWidget {
   const OnBoardScreen({super.key});

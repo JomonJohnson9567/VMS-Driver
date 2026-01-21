@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../core/colors/colors.dart';
+import '../../../core/theme/colors/colors.dart';
 import '../../../core/routes/app_routes.dart';
 import '../../widgets/primary_button.dart';
 import 'bloc/otp_verification_bloc.dart';
