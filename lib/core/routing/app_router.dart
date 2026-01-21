@@ -24,7 +24,7 @@ class AppRouter {
       case AppRoutes.otp:
         return MaterialPageRoute(builder: (_) => const OtpVerificationPage());
       case AppRoutes.dashboard:
-        return MaterialPageRoute(builder: (_) => const DashboardScreen());
+        return MaterialPageRoute(builder: (_) => const HomePage());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
