@@ -7,7 +7,7 @@ import 'package:vms_driver/presentation/pages/onboard/bloc/onboard_cubit.dart';
 import 'package:vms_driver/presentation/pages/onboard/widgets/onboard_content.dart';
 import 'package:vms_driver/presentation/pages/onboard/widgets/onboard_next_button.dart';
 import 'package:vms_driver/presentation/pages/onboard/widgets/onboard_skip_button.dart';
-import 'package:vms_driver/presentation/pages/onboard/widgets/onboard_data.dart';
+import 'package:vms_driver/presentation/widgets/onboard_data.dart';
 import 'package:vms_driver/core/routes/app_routes.dart';
 import '../../../../core/colors/colors.dart';
 

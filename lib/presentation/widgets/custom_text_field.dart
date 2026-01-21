@@ -41,16 +41,7 @@ class CustomTextField extends StatelessWidget {
               hintText: hintText,
               hintStyle: TextStyle(color: AppColors.darkGrey, fontSize: 16.sp),
               contentPadding: EdgeInsets.symmetric(vertical: 14.h),
-              // We handle error text outside the decoration to keep custom styling
-              // or we can integrate it. For now, let's keep the error separate
-              // or integrated if standard look is desired.
-              // Given the design, standard errorText in InputDecoration
-              // might shift the layout. Let's see.
-              // Standard behavior is usually desired for 'clean architecture' validator feedback.
-              // But the container has a border.
-              // If we use errorText here, it will appear outside the border?
-              // The original code wraps TextField in a Container with border.
-              // If we want the error to appear below the container, we should handle it outside.
+              
             ),
           ),
         ),

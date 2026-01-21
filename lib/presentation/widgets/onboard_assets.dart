@@ -7,4 +7,6 @@ class OnboardAssets {
   static const String bookYourCar = 'assets/images/onboard/Frame 1.png';
   static const String flag = 'assets/images/onboard/Flag_of_India.svg.webp';
   static const String welcome = "assets/images/onboard/Welcome Screen.png";
+  static const String otp = "assets/images/onboard/otp_illustration.png";
+  static const String success = "assets/images/onboard/image 1.png";
 }

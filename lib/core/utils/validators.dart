@@ -22,4 +22,16 @@ class Validators {
     }
     return null;
   }
+
+  static String? otp(String? value) {
+    if (value == null || value.trim().isEmpty) {
+      return 'OTP is required';
+    }
+    final otp = value.trim();
+    if (!RegExp(r'^[0-9]{5}$').hasMatch(otp)) {
+      return 'Enter a valid 5-digit OTP';
+    }
+    return null;
+  }
+
 }
