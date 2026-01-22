@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vms_driver/core/theme/colors/colors.dart';
-import 'package:vms_driver/features/auth/presentation/screens/login/cubit/log_in_cubit.dart';
-import 'package:vms_driver/features/auth/presentation/screens/login/cubit/log_in_state.dart';
+import 'package:vms_driver/features/auth/presentation/screens/sign_in/cubit/log_in_cubit.dart';
+import 'package:vms_driver/features/auth/presentation/screens/sign_in/cubit/log_in_state.dart';
 import 'package:vms_driver/core/widgets/phone_number_field.dart';
 
 class LogInPhoneSection extends StatelessWidget {

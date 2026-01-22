@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vms_driver/core/constants/onboard_assets.dart';
+import 'package:vms_driver/core/constants/app_assets.dart';
  
 class SignInIllustration extends StatelessWidget {
   const SignInIllustration({super.key});

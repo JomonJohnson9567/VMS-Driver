@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vms_driver/core/widgets/primary_button.dart';
 
-import '../../core/widgets/primary_button.dart';
 import 'success_illustration.dart';
 import '../../core/theme/colors/colors.dart';
 
@@ -54,7 +54,7 @@ class SuccessDialog extends StatelessWidget {
             ),
             SizedBox(height: 32.h),
 
-            PrimaryButton(text: "Go", onPressed: onGoPressed),
+            PrimaryButton(text: "Go", onTap: onGoPressed),
             SizedBox(height: 8.h),
           ],
         ),

@@ -18,7 +18,7 @@ class SignInLoginLink extends StatelessWidget {
         GestureDetector(
           onTap: onTap,
           child: const Text(
-            "Log in",
+            "Sign in",
             style: TextStyle(
               color: AppColors.primaryOrange,
               fontSize: 16,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vms_driver/core/constants/onboard_assets.dart';
+import 'package:vms_driver/core/constants/app_assets.dart';
 import '../../core/theme/colors/colors.dart';
 
 class PhoneNumberField extends StatelessWidget {
@@ -25,7 +25,7 @@ class PhoneNumberField extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
             color: AppColors.white,
-            borderRadius: BorderRadius.circular(12.r),
+            borderRadius: BorderRadius.circular(10.r),
             border: Border.all(
               color: errorText != null ? AppColors.red : AppColors.grey,
             ),

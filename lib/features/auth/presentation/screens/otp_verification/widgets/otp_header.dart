@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vms_driver/core/theme/colors/colors.dart';
- 
+
 class OtpHeader extends StatelessWidget {
   const OtpHeader({super.key});
 
@@ -21,7 +21,7 @@ class OtpHeader extends StatelessWidget {
         RichText(
           textAlign: TextAlign.center,
           text: TextSpan(
-            text: 'Please enter the 6 digit code sent to\n',
+            text: 'Please enter the 5 digit code sent to\n',
             style: TextStyle(
               fontSize: 14.sp,
               color: AppColors.lightGrey,

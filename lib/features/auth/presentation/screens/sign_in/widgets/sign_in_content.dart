@@ -1,34 +1,23 @@
+
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vms_driver/core/theme/colors/colors.dart';
-import 'package:vms_driver/features/auth/presentation/screens/login/cubit/log_in_cubit.dart';
-import 'package:vms_driver/features/auth/presentation/screens/login/cubit/log_in_state.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vms_driver/core/routing/app_routes.dart';
-import 'widgets/log_in_header.dart';
-import 'widgets/log_in_illustration.dart';
-import 'widgets/log_in_title.dart';
-import 'widgets/log_in_name_section.dart';
-import 'widgets/log_in_phone_section.dart';
-import 'widgets/log_in_otp_info.dart';
-import 'widgets/log_in_button.dart';
-import 'widgets/log_in_signin_link.dart';
-import 'widgets/log_in_footer.dart';
+import 'package:vms_driver/core/theme/colors/colors.dart';
+import 'package:vms_driver/features/auth/presentation/screens/sign_in/cubit/log_in_cubit.dart';
+import 'package:vms_driver/features/auth/presentation/screens/sign_in/cubit/log_in_state.dart';
+import 'package:vms_driver/features/auth/presentation/screens/sign_in/widgets/sign_in_header.dart';
+import 'package:vms_driver/features/auth/presentation/screens/sign_in/widgets/sign_in_illustration.dart';
+import 'package:vms_driver/features/auth/presentation/screens/sign_in/widgets/sign_in_name_section.dart';
+import 'package:vms_driver/features/auth/presentation/screens/sign_in/widgets/sign_in_otp_info.dart';
+import 'package:vms_driver/features/auth/presentation/screens/sign_in/widgets/sign_in_phone_section.dart';
+import 'package:vms_driver/features/auth/presentation/screens/sign_in/widgets/sign_in_signin_link.dart';
+import 'package:vms_driver/features/auth/presentation/screens/sign_in/widgets/sign_in_title.dart';
+import 'package:vms_driver/features/auth/presentation/screens/sign_in/widgets/sign_inbutton.dart';
+import 'package:vms_driver/features/auth/presentation/screens/sign_in/widgets/sign_in_footer.dart';
 
-class LogInPage extends StatelessWidget {
-  const LogInPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => LogInCubit(),
-      child: const _LogInContent(),
-    );
-  }
-}
-
-class _LogInContent extends StatelessWidget {
-  const _LogInContent();
+class LogInContent extends StatelessWidget {
+  const LogInContent({super.key});
 
   @override
   Widget build(BuildContext context) {

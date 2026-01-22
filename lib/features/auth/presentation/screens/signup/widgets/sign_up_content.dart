@@ -1,34 +1,22 @@
+
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vms_driver/core/theme/colors/colors.dart';
 import 'package:vms_driver/features/auth/presentation/screens/signup/cubit/sign_in_cubit.dart';
 import 'package:vms_driver/features/auth/presentation/screens/signup/cubit/sign_in_state.dart';
 import 'package:vms_driver/core/routing/app_routes.dart';
-import 'widgets/sign_in_header.dart';
-import 'widgets/sign_in_illustration.dart';
-import 'widgets/sign_in_title.dart';
-import 'widgets/sign_in_name_section.dart';
-import 'widgets/sign_in_phone_section.dart';
-import 'widgets/sign_in_otp_info.dart';
-import 'widgets/sign_in_button.dart';
-import 'widgets/sign_in_login_link.dart';
-import 'widgets/sign_in_footer.dart';
-
-class SignInPage extends StatelessWidget {
-  const SignInPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => SignInCubit(),
-      child: const _SignInContent(),
-    );
-  }
-}
-
-class _SignInContent extends StatelessWidget {
-  const _SignInContent();
+import 'package:vms_driver/features/auth/presentation/screens/signup/widgets/sign_up_header.dart';
+import 'package:vms_driver/features/auth/presentation/screens/signup/widgets/sign_up_illustration.dart';
+import 'package:vms_driver/features/auth/presentation/screens/signup/widgets/sign_up_title.dart';
+import 'package:vms_driver/features/auth/presentation/screens/signup/widgets/sign_up_name_section.dart';
+import 'package:vms_driver/features/auth/presentation/screens/signup/widgets/sign_up_phone_section.dart';
+import 'package:vms_driver/features/auth/presentation/screens/signup/widgets/sign_up_otp_info.dart';
+import 'package:vms_driver/features/auth/presentation/screens/signup/widgets/sign_up_button.dart';
+import 'package:vms_driver/features/auth/presentation/screens/signup/widgets/sign_up_login_link.dart';
+import 'package:vms_driver/features/auth/presentation/screens/signup/widgets/sign_up_footer.dart';
+class SignInContent extends StatelessWidget {
+  const SignInContent({super.key});
 
   @override
   Widget build(BuildContext context) {

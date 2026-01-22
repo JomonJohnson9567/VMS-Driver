@@ -1,4 +1,4 @@
-import 'package:vms_driver/core/constants/onboard_assets.dart';
+import 'package:vms_driver/core/constants/app_assets.dart';
 
 final List<Map<String, String>> onboardData = const [
   {

@@ -9,7 +9,7 @@ class LogInTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Text(
-        "Log In",
+        "Sign In",
         style: TextStyle(
           fontSize: 24.sp,
           fontWeight: FontWeight.w600,

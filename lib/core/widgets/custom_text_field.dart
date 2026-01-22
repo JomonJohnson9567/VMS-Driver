@@ -26,7 +26,7 @@ class CustomTextField extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
             color: AppColors.white,
-            borderRadius: BorderRadius.circular(12.r),
+            borderRadius: BorderRadius.circular(10.r),
             border: Border.all(
               color: errorText != null ? AppColors.red : AppColors.grey,
             ),

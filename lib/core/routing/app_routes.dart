@@ -5,5 +5,5 @@ class AppRoutes {
   static const String signIn = '/sign_in';
   static const String logIn = '/log_in';
   static const String otp = '/otp';
-  static const String dashboard = '/homepage';
+  static const String homepage = '/homepage';
 }

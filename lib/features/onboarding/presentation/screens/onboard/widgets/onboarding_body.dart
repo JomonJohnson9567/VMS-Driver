@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vms_driver/features/onboarding/presentation/cubit/onboard_cubit.dart';
-import 'package:vms_driver/features/onboarding/presentation/widgets/onboard_content.dart';
-import 'package:vms_driver/features/onboarding/presentation/widgets/onboard_next_button.dart';
-import 'package:vms_driver/features/onboarding/presentation/widgets/onboard_skip_button.dart';
-import 'package:vms_driver/core/constants/onboard_texts.dart';
+import 'package:vms_driver/features/onboarding/presentation/screens/onboard/widgets/onboard_content.dart';
+import 'package:vms_driver/features/onboarding/presentation/screens/onboard/widgets/onboard_next_button.dart';
+import 'package:vms_driver/features/onboarding/presentation/screens/onboard/widgets/onboard_skip_button.dart';
+import 'package:vms_driver/core/constants/app_texts.dart';
 import 'package:vms_driver/core/routing/app_routes.dart';
 import 'package:vms_driver/core/theme/colors/colors.dart';
 

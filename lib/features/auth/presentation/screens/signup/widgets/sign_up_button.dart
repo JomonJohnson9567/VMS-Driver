@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
- 
 import 'package:vms_driver/core/widgets/primary_button.dart';
 
 class SignInButton extends StatelessWidget {
@@ -8,12 +7,6 @@ class SignInButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PrimaryButton(
-      text: "Sign up",
-      onPressed: () {
-        // context.read<SignInCubit>().submit();
-        onPressed();
-      },
-    );
+    return PrimaryButton(text: "Sign up", onTap: () => onPressed());
   }
 }

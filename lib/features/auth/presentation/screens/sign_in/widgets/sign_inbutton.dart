@@ -9,8 +9,8 @@ class LogInButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PrimaryButton(
-      text: "Log In",
-      onPressed: () {
+      text: "Sign In",
+      onTap: () {
         // context.read<LogInCubit>().submit();
         onPressed();
       },
