@@ -1,11 +1,15 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
+import 'package:vms_driver/features/onboarding/domain/usecases/complete_onboarding.dart';
 
 part 'onboard_state.dart';
 
 class OnboardCubit extends Cubit<OnboardState> {
-  OnboardCubit() : super(const OnboardState());
+  final CompleteOnboarding completeOnboardingUseCase;
+
+  OnboardCubit({required this.completeOnboardingUseCase})
+    : super(const OnboardState());
 
   final PageController pageController = PageController();
 
@@ -24,5 +28,9 @@ class OnboardCubit extends Cubit<OnboardState> {
 
   void skip() {
     pageController.jumpToPage(2);
+  }
+
+  Future<void> completeOnboarding() async {
+    await completeOnboardingUseCase();
   }
 }

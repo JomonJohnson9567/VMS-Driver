@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vms_driver/core/di/service_locator.dart';
 import 'package:vms_driver/core/routing/app_router.dart';
 import 'package:vms_driver/core/routing/app_routes.dart';
 import 'package:vms_driver/core/theme/app_theme.dart';
@@ -16,8 +17,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => SnackbarBloc(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => SnackbarBloc()),
+        BlocProvider(create: (context) => ServiceLocator.onboardCubit),
+      ],
       child: ScreenUtilInit(
         designSize: const Size(375, 812),
         minTextAdapt: true,
