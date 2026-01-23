@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:vms_driver/core/theme/colors/colors.dart';
 
-class LogInSignInLink extends StatelessWidget {
-  const LogInSignInLink({super.key, required this.onTap});
+class SignInSignUpLink extends StatelessWidget {
+  const SignInSignUpLink({super.key, required this.onTap});
 
   final VoidCallback onTap;
 

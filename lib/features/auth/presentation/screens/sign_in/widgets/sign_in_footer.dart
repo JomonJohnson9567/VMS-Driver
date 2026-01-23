@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:vms_driver/core/theme/colors/colors.dart';
 
-class LogInFooter extends StatelessWidget {
-  const LogInFooter({super.key});
+class SignInFooter extends StatelessWidget {
+  const SignInFooter({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class LogInFooter extends StatelessWidget {
         text: TextSpan(
           style: TextStyle(color: AppColors.backgroundGrey, fontSize: 12),
           children: [
-            const TextSpan(text: "By logging in, you agree to the "),
+            const TextSpan(text: "By signing in, you agree to the "),
             TextSpan(
               text: "Terms of service",
               style: TextStyle(color: AppColors.blue),

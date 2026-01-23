@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:vms_driver/core/theme/colors/colors.dart';
 
-class LogInOtpInfo extends StatelessWidget {
-  const LogInOtpInfo({super.key});
+class SignInOtpInfo extends StatelessWidget {
+  const SignInOtpInfo({super.key});
 
   @override
   Widget build(BuildContext context) {

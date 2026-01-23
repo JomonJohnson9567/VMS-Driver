@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vms_driver/core/theme/colors/colors.dart';
 
-class LogInTitle extends StatelessWidget {
-  const LogInTitle({super.key});
+class SignInTitle extends StatelessWidget {
+  const SignInTitle({super.key});
 
   @override
   Widget build(BuildContext context) {

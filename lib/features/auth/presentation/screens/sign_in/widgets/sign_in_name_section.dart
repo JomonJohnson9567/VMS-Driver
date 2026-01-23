@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vms_driver/core/theme/colors/colors.dart';
-import 'package:vms_driver/features/auth/presentation/screens/sign_in/cubit/log_in_cubit.dart';
-import 'package:vms_driver/features/auth/presentation/screens/sign_in/cubit/log_in_state.dart';
+import 'package:vms_driver/features/auth/presentation/screens/sign_in/cubit/sign_in_cubit.dart';
+import 'package:vms_driver/features/auth/presentation/screens/sign_in/cubit/sign_in_state.dart';
 import 'package:vms_driver/core/widgets/custom_text_field.dart';
 
-class LogInNameSection extends StatelessWidget {
-  const LogInNameSection({super.key});
+class SignInNameSection extends StatelessWidget {
+  const SignInNameSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<LogInCubit, LogInState>(
+    return BlocBuilder<SignInCubit, SignInState>(
       buildWhen: (previous, current) => previous.nameError != current.nameError,
       builder: (context, state) {
         return Column(
@@ -25,7 +25,7 @@ class LogInNameSection extends StatelessWidget {
               hintText: "Enter your name",
               errorText: state.nameError,
               onChanged: (value) =>
-                  context.read<LogInCubit>().nameChanged(value),
+                  context.read<SignInCubit>().nameChanged(value),
             ),
           ],
         );

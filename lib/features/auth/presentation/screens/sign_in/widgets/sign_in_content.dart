@@ -1,11 +1,10 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vms_driver/core/routing/app_routes.dart';
 import 'package:vms_driver/core/theme/colors/colors.dart';
-import 'package:vms_driver/features/auth/presentation/screens/sign_in/cubit/log_in_cubit.dart';
-import 'package:vms_driver/features/auth/presentation/screens/sign_in/cubit/log_in_state.dart';
+import 'package:vms_driver/features/auth/presentation/screens/sign_in/cubit/sign_in_cubit.dart';
+import 'package:vms_driver/features/auth/presentation/screens/sign_in/cubit/sign_in_state.dart';
 import 'package:vms_driver/features/auth/presentation/screens/sign_in/widgets/sign_in_header.dart';
 import 'package:vms_driver/features/auth/presentation/screens/sign_in/widgets/sign_in_illustration.dart';
 import 'package:vms_driver/features/auth/presentation/screens/sign_in/widgets/sign_in_name_section.dart';
@@ -16,12 +15,12 @@ import 'package:vms_driver/features/auth/presentation/screens/sign_in/widgets/si
 import 'package:vms_driver/features/auth/presentation/screens/sign_in/widgets/sign_inbutton.dart';
 import 'package:vms_driver/features/auth/presentation/screens/sign_in/widgets/sign_in_footer.dart';
 
-class LogInContent extends StatelessWidget {
-  const LogInContent({super.key});
+class SignInContent extends StatelessWidget {
+  const SignInContent({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<LogInCubit, LogInState>(
+    return BlocListener<SignInCubit, SignInState>(
       listener: (context, state) {
         if (state.isSuccess) {
           Navigator.pushNamed(context, AppRoutes.otp);
@@ -36,31 +35,31 @@ class LogInContent extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const LogInHeader(),
+                  const SignInHeader(),
                   SizedBox(height: 24.h),
-                  const LogInIllustration(),
+                  const SignInIllustration(),
                   SizedBox(height: 32.h),
-                  const LogInTitle(),
+                  const SignInTitle(),
                   SizedBox(height: 32.h),
-                  const LogInNameSection(),
+                  const SignInNameSection(),
                   SizedBox(height: 20.h),
-                  const LogInPhoneSection(),
+                  const SignInPhoneSection(),
                   SizedBox(height: 12.h),
-                  const LogInOtpInfo(),
+                  const SignInOtpInfo(),
                   SizedBox(height: 32.h),
-                  LogInButton(
+                  SignInButton(
                     onPressed: () {
-                      context.read<LogInCubit>().submit();
+                      context.read<SignInCubit>().submit();
                     },
                   ),
                   SizedBox(height: 24.h),
-                  LogInSignInLink(
+                  SignInSignUpLink(
                     onTap: () {
-                      Navigator.pushNamed(context, AppRoutes.signIn);
+                      Navigator.pushNamed(context, AppRoutes.signUp);
                     },
                   ),
                   SizedBox(height: 32.h),
-                  const LogInFooter(),
+                  const SignInFooter(),
                   SizedBox(height: 16.h),
                 ],
               ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:vms_driver/core/constants/app_assets.dart';
- 
-class LogInIllustration extends StatelessWidget {
-  const LogInIllustration({super.key});
+
+class SignInIllustration extends StatelessWidget {
+  const SignInIllustration({super.key});
 
   @override
   Widget build(BuildContext context) {

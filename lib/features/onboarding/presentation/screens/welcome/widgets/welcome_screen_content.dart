@@ -3,7 +3,7 @@ import 'package:vms_driver/features/onboarding/presentation/screens/welcome/widg
 import 'package:vms_driver/features/onboarding/presentation/screens/welcome/widgets/welcome_title.dart';
 import 'package:vms_driver/features/onboarding/presentation/screens/welcome/widgets/welcome_content.dart';
 import 'package:vms_driver/features/onboarding/presentation/screens/welcome/widgets/create_account_button.dart';
-import 'package:vms_driver/features/onboarding/presentation/screens/welcome/widgets/log_in_button.dart';
+import 'package:vms_driver/features/onboarding/presentation/screens/welcome/widgets/sign_in_button.dart';
 
 class WelcomeScreenContents extends StatelessWidget {
   const WelcomeScreenContents({super.key, required this.size});
@@ -33,7 +33,7 @@ class WelcomeScreenContents extends StatelessWidget {
 
           const SizedBox(height: 14),
 
-          LogInButton(),
+          SignInButton(),
 
           const SizedBox(height: 30),
         ],

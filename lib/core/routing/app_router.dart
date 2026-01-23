@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:vms_driver/features/auth/presentation/screens/signup/sign_up_page.dart';
 import '../../features/onboarding/presentation/screens/splash/widgets/splash_page.dart';
 import '../../features/onboarding/presentation/screens/onboard/screens/on_board.dart';
 import '../../features/onboarding/presentation/screens/welcome/screens/welcome.dart';
-import '../../features/auth/presentation/screens/signup/sign_up_page.dart';
 import '../../features/auth/presentation/screens/sign_in/screens/sign_in_page.dart';
 import '../../features/auth/presentation/screens/otp_verification/widgets/otp_verification_screen.dart';
 import '../../features/home/presentation/home_page.dart';
@@ -19,8 +19,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const WelcomeScreen());
       case AppRoutes.signIn:
         return MaterialPageRoute(builder: (_) => const SignInPage());
-      case AppRoutes.logIn:
-        return MaterialPageRoute(builder: (_) => const LogInPage());
+      case AppRoutes.signUp:
+        return MaterialPageRoute(builder: (_) => const SignUpPage());
       case AppRoutes.otp:
         return MaterialPageRoute(builder: (_) => const OtpVerificationScreen());
       case AppRoutes.homepage:

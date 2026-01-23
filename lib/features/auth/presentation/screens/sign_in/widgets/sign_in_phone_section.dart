@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vms_driver/core/theme/colors/colors.dart';
-import 'package:vms_driver/features/auth/presentation/screens/sign_in/cubit/log_in_cubit.dart';
-import 'package:vms_driver/features/auth/presentation/screens/sign_in/cubit/log_in_state.dart';
+import 'package:vms_driver/features/auth/presentation/screens/sign_in/cubit/sign_in_cubit.dart';
+import 'package:vms_driver/features/auth/presentation/screens/sign_in/cubit/sign_in_state.dart';
 import 'package:vms_driver/core/widgets/phone_number_field.dart';
 
-class LogInPhoneSection extends StatelessWidget {
-  const LogInPhoneSection({super.key});
+class SignInPhoneSection extends StatelessWidget {
+  const SignInPhoneSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<LogInCubit, LogInState>(
+    return BlocBuilder<SignInCubit, SignInState>(
       buildWhen: (previous, current) =>
           previous.phoneError != current.phoneError,
       builder: (context, state) {
@@ -26,7 +26,7 @@ class LogInPhoneSection extends StatelessWidget {
               hintText: "Your mobile number",
               errorText: state.phoneError,
               onChanged: (value) =>
-                  context.read<LogInCubit>().phoneChanged(value),
+                  context.read<SignInCubit>().phoneChanged(value),
             ),
           ],
         );

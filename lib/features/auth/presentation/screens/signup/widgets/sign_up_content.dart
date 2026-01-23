@@ -1,6 +1,5 @@
-
 import 'package:flutter/material.dart';
- import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vms_driver/core/theme/colors/colors.dart';
 import 'package:vms_driver/features/auth/presentation/screens/signup/cubit/sign_in_cubit.dart';
@@ -13,8 +12,9 @@ import 'package:vms_driver/features/auth/presentation/screens/signup/widgets/sig
 import 'package:vms_driver/features/auth/presentation/screens/signup/widgets/sign_up_phone_section.dart';
 import 'package:vms_driver/features/auth/presentation/screens/signup/widgets/sign_up_otp_info.dart';
 import 'package:vms_driver/features/auth/presentation/screens/signup/widgets/sign_up_button.dart';
-import 'package:vms_driver/features/auth/presentation/screens/signup/widgets/sign_up_login_link.dart';
+import 'package:vms_driver/features/auth/presentation/screens/signup/widgets/sign_up_signin_link.dart';
 import 'package:vms_driver/features/auth/presentation/screens/signup/widgets/sign_up_footer.dart';
+
 class SignInContent extends StatelessWidget {
   const SignInContent({super.key});
 
@@ -53,9 +53,9 @@ class SignInContent extends StatelessWidget {
                     },
                   ),
                   SizedBox(height: 24.h),
-                  SignInLoginLink(
+                  SignUpSignInLink(
                     onTap: () {
-                      Navigator.pushNamed(context, AppRoutes.logIn);
+                      Navigator.pushNamed(context, AppRoutes.signIn);
                     },
                   ),
                   SizedBox(height: 32.h),

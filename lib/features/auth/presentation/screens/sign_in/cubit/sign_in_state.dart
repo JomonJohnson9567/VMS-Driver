@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-class LogInState extends Equatable {
+class SignInState extends Equatable {
   final String name;
   final String phoneNumber;
   final String? nameError;
@@ -8,7 +8,7 @@ class LogInState extends Equatable {
   final bool isSubmitting;
   final bool isSuccess;
 
-  const LogInState({
+  const SignInState({
     this.name = '',
     this.phoneNumber = '',
     this.nameError,
@@ -17,7 +17,7 @@ class LogInState extends Equatable {
     this.isSuccess = false,
   });
 
-  LogInState copyWith({
+  SignInState copyWith({
     String? name,
     String? phoneNumber,
     String? nameError,
@@ -25,7 +25,7 @@ class LogInState extends Equatable {
     bool? isSubmitting,
     bool? isSuccess,
   }) {
-    return LogInState(
+    return SignInState(
       name: name ?? this.name,
       phoneNumber: phoneNumber ?? this.phoneNumber,
       nameError: nameError,

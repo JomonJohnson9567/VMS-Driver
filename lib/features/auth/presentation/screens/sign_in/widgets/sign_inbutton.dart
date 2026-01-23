@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:vms_driver/core/widgets/primary_button.dart';
 
-class LogInButton extends StatelessWidget {
-  const LogInButton({super.key, required this.onPressed});
+class SignInButton extends StatelessWidget {
+  const SignInButton({super.key, required this.onPressed});
   final VoidCallback onPressed;
 
   @override
@@ -11,7 +11,7 @@ class LogInButton extends StatelessWidget {
     return PrimaryButton(
       text: "Sign In",
       onTap: () {
-        // context.read<LogInCubit>().submit();
+        // context.read<SignInCubit>().submit();
         onPressed();
       },
     );
