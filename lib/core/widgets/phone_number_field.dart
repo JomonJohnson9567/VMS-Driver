@@ -34,6 +34,7 @@ class PhoneNumberField extends StatelessWidget {
             controller: controller,
             keyboardType: TextInputType.phone,
             onChanged: onChanged,
+            cursorColor: AppColors.primaryPurple,
             decoration: InputDecoration(
               focusColor: AppColors.red,
               border: InputBorder.none,

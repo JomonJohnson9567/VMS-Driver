@@ -36,6 +36,7 @@ class CustomTextField extends StatelessWidget {
             controller: controller,
             keyboardType: keyboardType,
             onChanged: onChanged,
+            cursorColor: AppColors.primaryPurple,
             decoration: InputDecoration(
               border: InputBorder.none,
               hintText: hintText,
