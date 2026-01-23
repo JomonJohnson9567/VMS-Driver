@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vms_driver/core/constants/app_texts.dart';
 import 'package:vms_driver/core/theme/colors/colors.dart';
 import 'package:vms_driver/features/auth/presentation/screens/signup/cubit/sign_in_cubit.dart';
 import 'package:vms_driver/features/auth/presentation/screens/signup/cubit/sign_in_state.dart';
 import 'package:vms_driver/core/widgets/custom_text_field.dart';
 
-class SignInNameSection extends StatelessWidget {
-  const SignInNameSection({super.key});
+class SignUpNameSection extends StatelessWidget {
+  const SignUpNameSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +18,15 @@ class SignInNameSection extends StatelessWidget {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              "Name",
-              style: TextStyle(fontSize: 16, color: AppColors.black),
+            Text(
+              AppTexts.namefield,
+              style: TextStyle(
+                fontSize: 16.sp,
+                color: AppColors.black,
+                fontWeight: FontWeight.w500,
+              ),
             ),
-            const SizedBox(height: 8),
+            SizedBox(height: 8.h),
             CustomTextField(
               hintText: "Enter your name",
               errorText: state.nameError,

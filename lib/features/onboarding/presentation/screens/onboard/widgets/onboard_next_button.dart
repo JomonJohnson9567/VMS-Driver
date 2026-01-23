@@ -32,7 +32,7 @@ class OnboardNextButton extends StatelessWidget {
               value: 1,
               strokeWidth: 6,
               valueColor: AlwaysStoppedAnimation(
-                AppColors.primaryOrange.withOpacity(0.25),
+                AppColors.primaryPurple.withOpacity(0.25),
               ),
             ),
           ),
@@ -44,13 +44,13 @@ class OnboardNextButton extends StatelessWidget {
               value: progress,
               strokeWidth: 6,
               strokeCap: StrokeCap.round,
-              valueColor: const AlwaysStoppedAnimation(AppColors.primaryOrange),
+              valueColor: const AlwaysStoppedAnimation(AppColors.primaryPurple),
               backgroundColor: Colors.transparent,
             ),
           ),
 
           Material(
-            color: AppColors.primaryOrange,
+            color: AppColors.primaryPurple,
             shape: const CircleBorder(),
             child: InkWell(
               customBorder: const CircleBorder(),

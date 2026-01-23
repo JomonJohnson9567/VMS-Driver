@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vms_driver/core/widgets/primary_button.dart';
 
-import 'success_illustration.dart';
-import '../../core/theme/colors/colors.dart';
+ import '../../core/theme/colors/colors.dart';
 
 class SuccessDialog extends StatelessWidget {
   final VoidCallback onGoPressed;
@@ -34,7 +33,7 @@ class SuccessDialog extends StatelessWidget {
             ),
             SizedBox(height: 8.h),
 
-            const SuccessIllustration(),
+       //   const SuccessIllustration(),
             SizedBox(height: 32.h),
 
             Text(

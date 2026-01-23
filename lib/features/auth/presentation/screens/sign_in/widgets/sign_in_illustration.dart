@@ -8,7 +8,7 @@ class SignInIllustration extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Image.asset(
-        OnboardAssets.atAnytime, // Using this as placeholder
+        OnboardAssets.trackyourride, // Using this as placeholder
         height: 200,
         fit: BoxFit.contain,
       ),

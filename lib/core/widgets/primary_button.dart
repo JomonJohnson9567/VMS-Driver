@@ -1,29 +1,70 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vms_driver/core/theme/colors/colors.dart';
 
 class PrimaryButton extends StatelessWidget {
-  final String text;
+  final String? text;
   final VoidCallback onTap;
+  final bool isOutlined;
+  final IconData? icon;
+  final double? iconSize;
+  final Color? iconColor;
 
-  const PrimaryButton({super.key, required this.text, required this.onTap});
+  const PrimaryButton({
+    super.key,
+    this.text,
+    required this.onTap,
+    this.isOutlined = false,
+    this.icon,
+    this.iconSize,
+    this.iconColor,
+  }) : assert(
+         text != null || icon != null,
+         'Either text or icon must be provided',
+       );
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 55,
+      height: 45.h,
       child: ElevatedButton(
         onPressed: onTap,
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.primaryOrange,
+          backgroundColor: isOutlined
+              ? AppColors.white
+              : AppColors.primaryPurple,
+          foregroundColor: isOutlined ? AppColors.textGrey : AppColors.white,
+          side: isOutlined
+              ? BorderSide(color: AppColors.grey.withOpacity(0.5))
+              : null,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(12.r),
           ),
           elevation: 0,
         ),
-        child: Text(
-          text,
-          style: const TextStyle(fontSize: 18, color: AppColors.white),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            if (icon != null) ...[
+              Icon(
+                icon,
+                size: iconSize ?? 20.sp,
+                color:
+                    iconColor ??
+                    (isOutlined ? AppColors.textGrey : AppColors.white),
+              ),
+              if (text != null) SizedBox(width: 8.w),
+            ],
+            if (text != null)
+              Text(
+                text!,
+                style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500),
+              ),
+          ],
         ),
       ),
     );

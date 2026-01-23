@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vms_driver/core/constants/app_assets.dart';
 import '../../core/theme/colors/colors.dart';
 
 class PhoneNumberField extends StatelessWidget {
@@ -31,53 +30,17 @@ class PhoneNumberField extends StatelessWidget {
             ),
           ),
           padding: EdgeInsets.symmetric(horizontal: 16.w),
-          child: Row(
-            children: [
-              Flexible(
-                flex: 0,
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    // const Icon(Icons.flag, color: AppColors.black),
-                    Image.asset(OnboardAssets.flag, width: 24, height: 24),
-                    SizedBox(width: 8.w),
-                    const Icon(
-                      Icons.keyboard_arrow_down,
-                      color: AppColors.black,
-                    ),
-                    SizedBox(width: 8.w),
-                    Container(width: 1.w, height: 24.h, color: AppColors.grey),
-                    SizedBox(width: 12.w),
-                    Text(
-                      '+91',
-                      style: TextStyle(
-                        color: AppColors.black,
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(width: 12.w),
-              Expanded(
-                child: TextFormField(
-                  controller: controller,
-                  keyboardType: TextInputType.phone,
-                  onChanged: onChanged,
-                  decoration: InputDecoration(
-                    focusColor: AppColors.red,
-                    border: InputBorder.none,
-                    hintText: hintText,
-                    hintStyle: TextStyle(
-                      color: AppColors.darkGrey,
-                      fontSize: 16.sp,
-                    ),
-                    contentPadding: EdgeInsets.symmetric(vertical: 14.h),
-                  ),
-                ),
-              ),
-            ],
+          child: TextFormField(
+            controller: controller,
+            keyboardType: TextInputType.phone,
+            onChanged: onChanged,
+            decoration: InputDecoration(
+              focusColor: AppColors.red,
+              border: InputBorder.none,
+              hintText: hintText,
+              hintStyle: TextStyle(color: AppColors.darkGrey, fontSize: 16.sp),
+              contentPadding: EdgeInsets.symmetric(vertical: 14.h),
+            ),
           ),
         ),
         if (errorText != null)

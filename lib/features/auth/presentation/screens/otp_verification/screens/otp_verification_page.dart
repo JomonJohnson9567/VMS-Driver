@@ -3,8 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vms_driver/core/theme/colors/colors.dart';
 import 'package:vms_driver/features/auth/presentation/screens/otp_verification/widgets/verify_button.dart';
 import '../widgets/otp_header.dart';
-import '../widgets/otp_illustration.dart';
-import '../widgets/otp_input_section.dart';
+ import '../widgets/otp_input_section.dart';
 import '../widgets/otp_resend_section.dart';
 
 class OtpVerificationContents extends StatelessWidget {
@@ -29,7 +28,7 @@ class OtpVerificationContents extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const OtpIllustration(),
+                // const OtpIllustration(),
                 SizedBox(height: 10.h),
                 const OtpHeader(),
                 const OtpInputSection(),

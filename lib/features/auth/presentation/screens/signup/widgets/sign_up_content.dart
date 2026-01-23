@@ -5,18 +5,15 @@ import 'package:vms_driver/core/theme/colors/colors.dart';
 import 'package:vms_driver/features/auth/presentation/screens/signup/cubit/sign_in_cubit.dart';
 import 'package:vms_driver/features/auth/presentation/screens/signup/cubit/sign_in_state.dart';
 import 'package:vms_driver/core/routing/app_routes.dart';
-import 'package:vms_driver/features/auth/presentation/screens/signup/widgets/sign_up_header.dart';
 import 'package:vms_driver/features/auth/presentation/screens/signup/widgets/sign_up_illustration.dart';
 import 'package:vms_driver/features/auth/presentation/screens/signup/widgets/sign_up_title.dart';
 import 'package:vms_driver/features/auth/presentation/screens/signup/widgets/sign_up_name_section.dart';
 import 'package:vms_driver/features/auth/presentation/screens/signup/widgets/sign_up_phone_section.dart';
-import 'package:vms_driver/features/auth/presentation/screens/signup/widgets/sign_up_otp_info.dart';
-import 'package:vms_driver/features/auth/presentation/screens/signup/widgets/sign_up_button.dart';
-import 'package:vms_driver/features/auth/presentation/screens/signup/widgets/sign_up_signin_link.dart';
-import 'package:vms_driver/features/auth/presentation/screens/signup/widgets/sign_up_footer.dart';
+import 'package:vms_driver/features/auth/presentation/screens/signup/widgets/sign_up_terms.dart';
+import 'package:vms_driver/features/auth/presentation/screens/signup/widgets/sign_up_actions.dart';
 
-class SignInContent extends StatelessWidget {
-  const SignInContent({super.key});
+class SignUpContent extends StatelessWidget {
+  const SignUpContent({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,32 +32,25 @@ class SignInContent extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SignInHeader(),
-                  SizedBox(height: 24.h),
-                  const SignInIllustration(),
+                  const SignUpIllustration(),
                   SizedBox(height: 32.h),
-                  const SignInTitle(),
+                  const SignUpTitle(),
                   SizedBox(height: 32.h),
-                  const SignInNameSection(),
+                  const SignUpNameSection(),
                   SizedBox(height: 20.h),
-                  const SignInPhoneSection(),
-                  SizedBox(height: 12.h),
-                  const SignInOtpInfo(),
-                  SizedBox(height: 32.h),
-                  SignInButton(
-                    onPressed: () {
+                  const SignUpPhoneSection(),
+                  SizedBox(height: 24.h),
+                  const SignUpTerms(),
+                  SizedBox(height: 48.h),
+                  SignUpActions(
+                    onLoginPressed: () {
+                      Navigator.pushNamed(context, AppRoutes.signIn);
+                    },
+                    onNextPressed: () {
                       context.read<SignInCubit>().submit();
                     },
                   ),
                   SizedBox(height: 24.h),
-                  SignUpSignInLink(
-                    onTap: () {
-                      Navigator.pushNamed(context, AppRoutes.signIn);
-                    },
-                  ),
-                  SizedBox(height: 32.h),
-                  const SignInFooter(),
-                  SizedBox(height: 16.h),
                 ],
               ),
             ),

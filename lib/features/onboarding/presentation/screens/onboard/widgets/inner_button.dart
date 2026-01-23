@@ -13,7 +13,7 @@ class InnerButton extends StatelessWidget {
       width: 56,
       height: 56,
       child: Material(
-        color: AppColors.primaryOrange,
+        color: AppColors.primaryPurple,
         shape: const CircleBorder(),
         child: InkWell(
           customBorder: const CircleBorder(),

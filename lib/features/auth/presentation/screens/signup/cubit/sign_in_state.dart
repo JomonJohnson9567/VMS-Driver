@@ -7,6 +7,7 @@ class SignInState extends Equatable {
   final String? phoneError;
   final bool isSubmitting;
   final bool isSuccess;
+  final bool isAgreed;
 
   const SignInState({
     this.name = '',
@@ -15,6 +16,7 @@ class SignInState extends Equatable {
     this.phoneError,
     this.isSubmitting = false,
     this.isSuccess = false,
+    this.isAgreed = false,
   });
 
   SignInState copyWith({
@@ -24,6 +26,7 @@ class SignInState extends Equatable {
     String? phoneError,
     bool? isSubmitting,
     bool? isSuccess,
+    bool? isAgreed,
   }) {
     return SignInState(
       name: name ?? this.name,
@@ -32,6 +35,7 @@ class SignInState extends Equatable {
       phoneError: phoneError,
       isSubmitting: isSubmitting ?? this.isSubmitting,
       isSuccess: isSuccess ?? this.isSuccess,
+      isAgreed: isAgreed ?? this.isAgreed,
     );
   }
 
@@ -43,5 +47,6 @@ class SignInState extends Equatable {
     phoneError,
     isSubmitting,
     isSuccess,
+    isAgreed,
   ];
 }
