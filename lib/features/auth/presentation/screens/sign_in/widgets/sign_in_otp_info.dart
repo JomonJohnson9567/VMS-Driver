@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vms_driver/core/constants/app_texts.dart';
 import 'package:vms_driver/core/theme/colors/colors.dart';
 
 class SignInOtpInfo extends StatelessWidget {
@@ -6,23 +8,15 @@ class SignInOtpInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Icon(
-          Icons
-              .info, // Using info icon, closely looks like the orange 'i' circle
-          color: AppColors.primaryOrange,
-          size: 20,
+    return Padding(
+      padding: EdgeInsets.zero,
+      child: Align(
+        alignment: Alignment.centerLeft,
+        child: Text(
+          AppTexts.otpInfo,
+          style: TextStyle(color: AppColors.textGrey, fontSize: 14.sp),
         ),
-        const SizedBox(width: 8),
-        Expanded(
-          child: Text(
-            "We will send you a 5-digit OTP",
-            style: TextStyle(color: AppColors.textGrey, fontSize: 14),
-          ),
-        ),
-      ],
+      ),
     );
   }
 }

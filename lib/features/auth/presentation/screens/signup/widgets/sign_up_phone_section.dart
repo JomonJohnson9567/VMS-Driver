@@ -12,7 +12,7 @@ class SignUpPhoneSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<SignInCubit, SignInState>(
+    return BlocBuilder<SignUpCubit, SignInState>(
       buildWhen: (previous, current) =>
           previous.phoneError != current.phoneError,
       builder: (context, state) {
@@ -32,7 +32,7 @@ class SignUpPhoneSection extends StatelessWidget {
               hintText: "Enter your mobile number",
               errorText: state.phoneError,
               onChanged: (value) =>
-                  context.read<SignInCubit>().phoneChanged(value),
+                  context.read<SignUpCubit>().phoneChanged(value),
             ),
           ],
         );

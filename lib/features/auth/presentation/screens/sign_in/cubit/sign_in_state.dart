@@ -17,6 +17,8 @@ class SignInState extends Equatable {
     this.isSuccess = false,
   });
 
+  bool get isValid => phoneError == null && phoneNumber.isNotEmpty;
+
   SignInState copyWith({
     String? name,
     String? phoneNumber,

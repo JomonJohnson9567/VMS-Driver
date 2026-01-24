@@ -2,8 +2,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vms_driver/core/utils/validators.dart';
 import 'sign_in_state.dart';
 
-class SignInCubit extends Cubit<SignInState> {
-  SignInCubit() : super(const SignInState());
+class SignUpCubit extends Cubit<SignInState> {
+  SignUpCubit() : super(const SignInState());
 
   void nameChanged(String value) {
     emit(state.copyWith(name: value, nameError: Validators.name(value)));

@@ -32,9 +32,12 @@ class AppTexts {
   static const String register = 'Register';
   static const String loginNow = 'Login now';
 
-  static const String signUpTitle = 'Create Your Account';
+  static const String signUpTitle = 'Create Account';
   static const String namefield = 'Name';
   static const String emailfield = 'Email';
   static const String enterOtp = 'Enter OTP';
   static const String mobileNumber = 'Mobile number';
+  static const String otpInfo = 'You will receive 5 - digit otp';
+  static const String otpsubTitle = '5 digit otp has been sent to\n';
+  static const String resendOtp = 'Resend OTP';
 }

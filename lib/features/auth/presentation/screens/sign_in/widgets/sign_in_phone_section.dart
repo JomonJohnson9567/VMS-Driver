@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vms_driver/core/theme/colors/colors.dart';
 import 'package:vms_driver/features/auth/presentation/screens/sign_in/cubit/sign_in_cubit.dart';
 import 'package:vms_driver/features/auth/presentation/screens/sign_in/cubit/sign_in_state.dart';
@@ -17,11 +18,15 @@ class SignInPhoneSection extends StatelessWidget {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
+            Text(
               "Mobile number",
-              style: TextStyle(fontSize: 16, color: AppColors.black),
+              style: TextStyle(
+                fontSize: 16.sp,
+                color: AppColors.black,
+                fontWeight: FontWeight.w500,
+              ),
             ),
-            const SizedBox(height: 8),
+            SizedBox(height: 8.h),
             PhoneNumberField(
               hintText: "Your mobile number",
               errorText: state.phoneError,

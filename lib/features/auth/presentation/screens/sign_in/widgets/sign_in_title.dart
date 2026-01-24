@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vms_driver/core/constants/app_texts.dart';
 import 'package:vms_driver/core/theme/colors/colors.dart';
 
 class SignInTitle extends StatelessWidget {
@@ -7,14 +8,14 @@ class SignInTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Align(
+      alignment: Alignment.centerLeft,
       child: Text(
-        "Sign In",
+        AppTexts.signUpTitle,
         style: TextStyle(
           fontSize: 24.sp,
-          fontWeight: FontWeight.w600,
-          // fontWeight: FontWeight.bold,
-          color: AppColors.black,
+          fontWeight: FontWeight.w700,
+          color: AppColors.primaryPurple,
         ),
       ),
     );

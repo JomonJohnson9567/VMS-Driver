@@ -10,7 +10,7 @@ class SignUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => SignInCubit(),
+      create: (context) => SignUpCubit(),
       child: const SignUpContent(),
     );
   }

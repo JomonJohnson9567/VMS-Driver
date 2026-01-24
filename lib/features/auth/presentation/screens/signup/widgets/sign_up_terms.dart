@@ -11,7 +11,7 @@ class SignUpTerms extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<SignInCubit, SignInState>(
+    return BlocBuilder<SignUpCubit, SignInState>(
       buildWhen: (previous, current) => previous.isAgreed != current.isAgreed,
       builder: (context, state) {
         return Row(
@@ -23,7 +23,7 @@ class SignUpTerms extends StatelessWidget {
               child: Checkbox(
                 value: state.isAgreed,
                 onChanged: (value) {
-                  context.read<SignInCubit>().toggleAgreement();
+                  context.read<SignUpCubit>().toggleAgreement();
                 },
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(4.r),

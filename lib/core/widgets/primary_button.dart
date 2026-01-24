@@ -11,6 +11,7 @@ class PrimaryButton extends StatelessWidget {
   final IconData? icon;
   final double? iconSize;
   final Color? iconColor;
+  final bool isLoading;
 
   const PrimaryButton({
     super.key,
@@ -20,8 +21,10 @@ class PrimaryButton extends StatelessWidget {
     this.icon,
     this.iconSize,
     this.iconColor,
+    this.isLoading = false,
   }) : assert(
          text != null || icon != null,
+
          'Either text or icon must be provided',
        );
 
@@ -31,12 +34,15 @@ class PrimaryButton extends StatelessWidget {
       width: double.infinity,
       height: 45.h,
       child: ElevatedButton(
-        onPressed: onTap,
+        onPressed: isLoading ? null : onTap,
         style: ElevatedButton.styleFrom(
           backgroundColor: isOutlined
               ? AppColors.white
               : AppColors.primaryPurple,
           foregroundColor: isOutlined ? AppColors.textGrey : AppColors.white,
+          disabledBackgroundColor: isOutlined
+              ? AppColors.white
+              : AppColors.primaryPurple.withOpacity(0.5),
           side: isOutlined
               ? BorderSide(color: AppColors.grey.withOpacity(0.5))
               : null,
@@ -45,27 +51,39 @@ class PrimaryButton extends StatelessWidget {
           ),
           elevation: 0,
         ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            if (icon != null) ...[
-              Icon(
-                icon,
-                size: iconSize ?? 20.sp,
-                color:
-                    iconColor ??
-                    (isOutlined ? AppColors.textGrey : AppColors.white),
+        child: isLoading
+            ? SizedBox(
+                height: 20.h,
+                width: 20.h,
+                child: CircularProgressIndicator(
+                  strokeWidth: 2,
+                  color: isOutlined ? AppColors.primaryPurple : AppColors.white,
+                ),
+              )
+            : Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  if (icon != null) ...[
+                    Icon(
+                      icon,
+                      size: iconSize ?? 20.sp,
+                      color:
+                          iconColor ??
+                          (isOutlined ? AppColors.textGrey : AppColors.white),
+                    ),
+                    if (text != null) SizedBox(width: 8.w),
+                  ],
+                  if (text != null)
+                    Text(
+                      text!,
+                      style: TextStyle(
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                ],
               ),
-              if (text != null) SizedBox(width: 8.w),
-            ],
-            if (text != null)
-              Text(
-                text!,
-                style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500),
-              ),
-          ],
-        ),
       ),
     );
   }

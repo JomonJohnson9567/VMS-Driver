@@ -8,9 +8,10 @@ class OnboardAssets {
   static const String applogoname = "assets/images/onboard/app_name_logo.png";
   static const String welcomepageimage =
       "assets/images/onboard/welcome_page_image.png";
-      
+
   static const String signUpImage =
       "assets/images/onboard/signup_page_image 1.png";
-  static const String logInImage =
+  static const String signInImage =
       "assets/images/onboard/Login_page_image 1.png";
+  static const String otpImage = "assets/images/onboard/otp_page_image 1.png";
 }

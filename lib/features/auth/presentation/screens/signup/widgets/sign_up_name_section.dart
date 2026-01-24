@@ -12,7 +12,7 @@ class SignUpNameSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<SignInCubit, SignInState>(
+    return BlocBuilder<SignUpCubit, SignInState>(
       buildWhen: (previous, current) => previous.nameError != current.nameError,
       builder: (context, state) {
         return Column(
@@ -31,7 +31,7 @@ class SignUpNameSection extends StatelessWidget {
               hintText: "Enter your name",
               errorText: state.nameError,
               onChanged: (value) =>
-                  context.read<SignInCubit>().nameChanged(value),
+                  context.read<SignUpCubit>().nameChanged(value),
             ),
           ],
         );

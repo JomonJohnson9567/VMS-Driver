@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vms_driver/core/constants/app_texts.dart';
 import 'package:vms_driver/core/theme/colors/colors.dart';
 
 class OtpHeader extends StatelessWidget {
@@ -8,23 +9,25 @@ class OtpHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Phone verification',
+          AppTexts.enterOtp,
           style: TextStyle(
             fontSize: 22.sp,
             fontWeight: FontWeight.bold,
-            color: AppColors.black,
+            color: AppColors.primaryPurple,
           ),
         ),
         SizedBox(height: 10.h),
         RichText(
-          textAlign: TextAlign.center,
+          textAlign: TextAlign.start,
           text: TextSpan(
-            text: 'Please enter the 5 digit code sent to\n',
+            text: AppTexts.otpsubTitle,
             style: TextStyle(
+              fontFamily: 'Poppins',
               fontSize: 14.sp,
-              color: AppColors.lightGrey,
+              color: AppColors.black,
               height: 1.5,
             ),
             children: [
@@ -32,8 +35,9 @@ class OtpHeader extends StatelessWidget {
                 text: '+91 000 000 0000',
                 style: TextStyle(
                   fontSize: 14.sp,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.primaryOrange,
+
+                  color: AppColors.black,
+                  fontFamily: 'Poppins',
                 ),
               ),
             ],

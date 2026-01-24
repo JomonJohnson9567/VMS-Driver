@@ -16,17 +16,16 @@ class SignInCubit extends Cubit<SignInState> {
   }
 
   void submit() {
-    final nameError = Validators.name(state.name);
     final phoneError = Validators.phone(state.phoneNumber);
 
-    if (nameError == null && phoneError == null) {
+    if (phoneError == null) {
       emit(state.copyWith(isSubmitting: true));
       // Simulate API call
       Future.delayed(const Duration(seconds: 1), () {
         emit(state.copyWith(isSubmitting: false, isSuccess: true));
       });
     } else {
-      emit(state.copyWith(nameError: nameError, phoneError: phoneError));
+      emit(state.copyWith(phoneError: phoneError));
     }
   }
 }

@@ -17,7 +17,7 @@ class SignUpContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<SignInCubit, SignInState>(
+    return BlocListener<SignUpCubit, SignInState>(
       listener: (context, state) {
         if (state.isSuccess) {
           Navigator.pushNamed(context, AppRoutes.otp);
@@ -47,7 +47,7 @@ class SignUpContent extends StatelessWidget {
                       Navigator.pushNamed(context, AppRoutes.signIn);
                     },
                     onNextPressed: () {
-                      context.read<SignInCubit>().submit();
+                      context.read<SignUpCubit>().submit();
                     },
                   ),
                   SizedBox(height: 24.h),
