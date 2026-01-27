@@ -40,4 +40,11 @@ class AppTexts {
   static const String otpInfo = 'You will receive 5 - digit otp';
   static const String otpsubTitle = '5 digit otp has been sent to\n';
   static const String resendOtp = 'Resend OTP';
+  static const String newToBookit = 'New to Bookit?';
+  static const String registerNow = 'Register now';
+  static const String back = "Back";
+  static const String agreement = "AGREEMENT";
+  static const String termsAndAcceptance = 'Terms & Privacy Acceptance';
+  static const String acceptAndContinue = 'Accept & Continue';
+  static const String decline = 'Decline';
 }

@@ -20,8 +20,7 @@ class SignInCubit extends Cubit<SignInState> {
 
     if (phoneError == null) {
       emit(state.copyWith(isSubmitting: true));
-      // Simulate API call
-      Future.delayed(const Duration(seconds: 1), () {
+      Future.delayed(const Duration(seconds: 0), () {
         emit(state.copyWith(isSubmitting: false, isSuccess: true));
       });
     } else {

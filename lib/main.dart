@@ -5,8 +5,6 @@ import 'package:vms_driver/core/di/service_locator.dart';
 import 'package:vms_driver/core/routing/app_router.dart';
 import 'package:vms_driver/core/routing/app_routes.dart';
 import 'package:vms_driver/core/theme/app_theme.dart';
-import 'package:vms_driver/core/app/bloc/snackbar/snackbar_bloc.dart';
-import 'package:vms_driver/core/widgets/custom_error_snackbar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +17,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => SnackbarBloc()),
         BlocProvider(create: (context) => ServiceLocator.onboardCubit),
       ],
       child: ScreenUtilInit(
@@ -34,7 +31,7 @@ class MyApp extends StatelessWidget {
             initialRoute: AppRoutes.splash,
             onGenerateRoute: AppRouter.onGenerateRoute,
             builder: (context, child) {
-              return Stack(children: [child!, const SnackbarOverlay()]);
+              return child!;
             },
           );
         },

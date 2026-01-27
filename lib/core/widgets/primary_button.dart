@@ -32,7 +32,7 @@ class PrimaryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 45.h,
+      height: 45,
       child: ElevatedButton(
         onPressed: isLoading ? null : onTap,
         style: ElevatedButton.styleFrom(
@@ -75,11 +75,16 @@ class PrimaryButton extends StatelessWidget {
                     if (text != null) SizedBox(width: 8.w),
                   ],
                   if (text != null)
-                    Text(
-                      text!,
-                      style: TextStyle(
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w500,
+                    Flexible(
+                      child: Text(
+                        text!,
+                        style: TextStyle(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w500,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.visible,
+                        softWrap: false,
                       ),
                     ),
                 ],

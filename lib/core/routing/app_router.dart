@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vms_driver/features/auth/presentation/screens/signup/screens/sign_up_page.dart';
+import 'package:vms_driver/features/terms_and_conditions/presentation/screens/terms_and_conditions.dart';
 import '../../features/onboarding/presentation/screens/splash/widgets/splash_page.dart';
 import '../../features/onboarding/presentation/screens/onboard/screens/on_board.dart';
 import '../../features/onboarding/presentation/screens/welcome/screens/welcome.dart';
@@ -23,6 +24,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const SignUpPage());
       case AppRoutes.otp:
         return MaterialPageRoute(builder: (_) => const OtpVerificationScreen());
+      case AppRoutes.termsAndcondition:
+        return MaterialPageRoute(builder: (_) => const TermsAndConditions());
       case AppRoutes.homepage:
         return MaterialPageRoute(builder: (_) => const HomePage());
       default:
